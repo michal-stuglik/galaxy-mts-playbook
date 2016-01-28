@@ -8,6 +8,12 @@ project_tools_dep_dir: tools_dependancy
 project_repo_ias: git://github.com/michal-stuglik/galaxy.git
 project_repo_galaxyproject: git://github.com/galaxyproject/galaxy.git
 
+## toolshed tools
+# galaxy_tools_tool_list_file: files/tool_list.yaml
+galaxy_tools_tool_list: tools/tool_list.yaml
+# galaxy_tools_galaxy_instance_url: http://127.0.0.1:8080/
+# galaxy_tools_api_key: <API key for Galaxy admin user>
+
 # default repository name
 repo: "ias-dev"
 
