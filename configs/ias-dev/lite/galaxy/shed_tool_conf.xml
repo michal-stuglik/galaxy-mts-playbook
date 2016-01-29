@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <toolbox tool_path="../shed_tools">
 
-    <label id="ngs" text="NGS Toolbox"/>
-
     <section id="blast" name="Blast" version="">
         <tool file="toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/7f3c448e119b/ncbi_blast_plus/tools/ncbi_blast_plus/ncbi_blastdbcmd_info.xml"
               guid="toolshed.g2.bx.psu.edu/repos/devteam/ncbi_blast_plus/ncbi_blastdbcmd_info/0.1.07">
@@ -140,6 +138,8 @@
             <version>0.1.07</version>
         </tool>
     </section>
+
+    <label id="ngs" text="NGS Toolbox"/>
 
     <section id="samtools" name="NGS: SAM Tools">
         <tool file="testtoolshed.g2.bx.psu.edu/repos/michal-stuglik/samtools_rocksdb/bf06ce88b9e2/samtools_rocksdb/samtools_rocksort.xml"
