@@ -1,4 +1,4 @@
 # galaxy-ias-playbook
 
-Galaxy-IAS playbook: install, setup, management
+Galaxy-ias-playbook: install, setup, management
 
