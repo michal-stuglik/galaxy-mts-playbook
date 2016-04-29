@@ -1,0 +1,13 @@
+---
+- hosts: galaxy-servers
+  vars_files:
+    - ../vars.yml
+  remote_user: galaxy
+
+  tasks:
+
+#  - name: Activate virtual environment
+#    shell: . {{ project_home_dir }}/{{ project_dir }}/.venv/bin/activate
+
+  - name: Start galaxy daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run.sh --daemon

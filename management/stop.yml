@@ -1,0 +1,9 @@
+---
+- hosts: galaxy-servers
+  vars_files:
+    - ../../galaxy-mts-playbook/vars.yml
+  remote_user: galaxy
+
+  tasks:
+  - name: Stop galaxy daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run.sh --stop-daemon
