@@ -5,7 +5,9 @@ project_home_dir: /home/galaxy
 project_data_dir: galaxy-database
 project_tools_dir: galaxy-tools
 project_tools_dep_dir: tools_dependancy
-project_repo_ias: git://github.com/michal-stuglik/galaxy.git
+
+# repos
+project_repo_mts: git://github.com/michal-stuglik/galaxy.git
 project_repo_galaxyproject: git://github.com/galaxyproject/galaxy.git
 
 ## toolshed tools
@@ -15,10 +17,12 @@ galaxy_tools_tool_list: tools/tool_list.yaml
 # galaxy_tools_api_key: <API key for Galaxy admin user>
 
 # default repository name
-repo: "ias-dev"
+# repo: "mts-dev"
+repo: "release_16.01"
 
 # default configs mode [lite, production]
 mode: "lite"
+#mode: "production"
 
 # mandatory, system (debian-familiy) programs
 system_packages:
@@ -54,6 +58,5 @@ python_packages_pip:
   - distribute
 
 system_remote_packages:
-
   - x2goserver
   - x2goserver-xsession

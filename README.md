@@ -1,4 +1,4 @@
-# galaxy-ias-playbook
+# galaxy-mts-playbook
 
-Galaxy-ias-playbook: install, setup, management
+galaxy-mts-playbook: install, setup, management
 
