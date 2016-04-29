@@ -1,8 +1,0 @@
-[galaxy-servers:children]
-edi
-
-[edi]
-143.234.212.102
-
-[local]
-localhost       ansible_connection=ssh    ansible_ssh_user=galaxy
