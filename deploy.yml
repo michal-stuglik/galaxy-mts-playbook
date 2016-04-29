@@ -23,7 +23,7 @@
 
   - name: Pull default IAS sources from the repository
     git: repo={{ project_repo_mts }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True
-    when: repo == "ias-dev"
+    when: repo == "mts-dev"
 
   - name: Upload configuration files
     copy: src=configs/{{ repo }}/{{ mode }}/galaxy/ dest={{ project_home_dir }}/{{ project_dir }}/config/
