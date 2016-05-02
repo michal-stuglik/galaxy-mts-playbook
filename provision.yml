@@ -7,9 +7,9 @@
   vars_files:
     - vars.yml
 
-  pre_tasks:
-    - name: 'install python2'
-      raw: sudo apt-get -y install python-simplejson
+#  pre_tasks:
+#    - name: 'install python2'
+#      raw: sudo apt-get -y install python-simplejson
 
   tasks:
   - name: Create user
@@ -39,11 +39,11 @@
 
   - name: Uninstall web server packages
     apt: pkg=nginx state=removed update-cache=yes
-    when: mode == "lite"
+    when: (mode == "lite") or (mode == "half")
 
   # Postgres database
   - include: 'tasks/postgres.yml'
-    when: mode == "production"
+    when: (mode == "production") or (mode == "half")
 
   # nginx webserwer
   - include: 'tasks/nginx.yml'
