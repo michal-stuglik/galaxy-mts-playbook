@@ -9,5 +9,5 @@
 #  - name: Activate virtual environment
 #    shell: . {{ project_home_dir }}/{{ project_dir }}/.venv/bin/activate
 
-  - name: Start galaxy daemon
+  - name: Start galaxy toolshed daemon
     shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run_tool_shed.sh --daemon
