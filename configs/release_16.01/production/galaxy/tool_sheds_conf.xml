@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <tool_sheds>
-    <tool_shed name="Local tool shed" url="http://ubuntu04:9009/"/>
+    <tool_shed name="Local tool shed" url="http://localhost:9009/"/>
+    <tool_shed name="Gitlab tool shed" url="http://ubuntu04:9009/"/>
     <tool_shed name="Galaxy Main Tool Shed" url="https://toolshed.g2.bx.psu.edu/"/>
  <!--Test Tool Shed should be used only for testing purposes.-->
     <tool_shed name="Galaxy Test Tool Shed" url="https://testtoolshed.g2.bx.psu.edu/"/> 
