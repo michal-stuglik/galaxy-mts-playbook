@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- A sample job config that explicitly configures job running the way it is configured by default (if there is no explicit config). -->
+<job_conf>
+     <plugins workers="10">
+        <plugin id="local" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner"/>
+        <plugin id="blast" type="runner" load="galaxy.jobs.runners.local:LocalJobRunner" workers="10"/>
+     </plugins>
+
+    <handlers>
+        <handler id="main"/>
+    </handlers>
+
+    <destinations default="local">
+        <destination id="local" runner="local"/>
+        <destination id="blast_multi_local" runner="blast">
+             <param id="local_slots">10</param>
+        </destination>
+    </destinations>
+
+    <tools>
+         <tool id="ncbi_blastn_wrapper" destination="blast_multi_local" />
+         <tool id="ncbi_blastp_wrapper" destination="blast_multi_local" />
+         <tool id="ncbi_blastx_wrapper" destination="blast_multi_local" />
+    </tools>
+
+    <limits>
+        <limit type="anonymous_user_concurrent_jobs"  id="local"> 1 </limit>
+    </limits>
+
+</job_conf>
