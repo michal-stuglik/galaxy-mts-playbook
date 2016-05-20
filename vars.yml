@@ -18,7 +18,8 @@ galaxy_tools_tool_list: tools/tool_list.yaml
 
 # default repository name
 # repo: "mts-dev"
-repo: "release_16.01"
+# repo: "release_16.01"
+repo: "release_16.04"
 
 # default configs mode [lite, production]
 mode: "lite"
