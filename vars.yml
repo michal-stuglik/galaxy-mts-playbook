@@ -39,6 +39,16 @@ system_packages:
   - libc6-dev-i386
   - libffi-dev
   - software-properties-common
+  - libblas-dev
+  - libblas3
+  - libatlas-base-dev
+  - libatlas-dev
+  - libatlas3-base
+  - subversion
+  - pkg-config
+  - cmake
+  - automake
+
 
 system_web_and_db_packages:
   - nginx
