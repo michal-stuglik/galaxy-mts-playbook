@@ -48,6 +48,7 @@ system_packages:
   - pkg-config
   - cmake
   - automake
+  - cython
 
 
 system_web_and_db_packages:
