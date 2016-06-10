@@ -49,6 +49,7 @@ system_packages:
   - cmake
   - automake
   - cython
+  - zlib1g-dev
 
 
 system_web_and_db_packages:
