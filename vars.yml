@@ -50,6 +50,7 @@ system_packages:
   - automake
   - cython
   - zlib1g-dev
+  - pandoc
 
 
 system_web_and_db_packages:
