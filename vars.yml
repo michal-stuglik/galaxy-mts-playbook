@@ -66,12 +66,12 @@ python_packages_system:
   - python-virtualenv
   - python-psycopg2
 
-python_packages_pip:
-  - pyopenssl
-  - ndg-httpsclient
-  - pyasn1
-  - distribute
-  - setuptools-markdown
+#python_packages_pip:
+#  - pyopenssl
+#  - ndg-httpsclient
+#  - pyasn1
+#  - distribute
+#  - setuptools-markdown
 
 system_remote_packages:
   - x2goserver
