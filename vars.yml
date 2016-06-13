@@ -71,6 +71,7 @@ python_packages_pip:
   - ndg-httpsclient
   - pyasn1
   - distribute
+  - setuptools-markdown
 
 system_remote_packages:
   - x2goserver
