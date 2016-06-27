@@ -5,11 +5,12 @@
      These resolvers can take a base_path attribute to specify where to look for
      package definitions, but by default look in the directory specified by tool_dependency_dir
      in Galaxy's config/galaxy.ini -->
-  <conda />
-  <conda versionless="false" />
 
   <galaxy_packages />
-  <galaxy_packages versionless="true" />
+  <galaxy_packages versionless="false" />
+
+  <conda />
+  <conda versionless="true" />
 
 
 <!-- Example configuration of modules dependency resolver, uses Environment Modules -->
