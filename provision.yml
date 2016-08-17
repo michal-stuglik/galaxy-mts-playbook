@@ -7,46 +7,20 @@
   vars_files:
     - vars/vars.yml
 
-#  pre_tasks:
-#    - name: 'install python2'
-#      raw: sudo apt-get -y install python-simplejson
-
   tasks:
-  - name: Create user
-    user: home={{ project_home_dir }} name={{ project_user }} state=present shell=/bin/bash
+    - include: 'tasks/provision.yaml'
 
-  - name: SSH key deployment for galaxy user.
-    authorized_key: user={{ project_user }} key="{{ item }}"
-    with_file:
-      - ~/.ssh/id_rsa.pub
-
-  - name: Create the project directory
-    file: state=directory path={{ project_dir }}
-
-  - name: Update mode to the project directory
-    file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}
-
-  - name: Install required system packages
-    apt: pkg={{ item }} state=installed update-cache=yes
-    with_items: "{{ system_packages }}"
-
-  - name: Install required python packages
-    apt: pkg={{ item }} state=installed update-cache=yes
-    with_items: "{{ python_packages_system }}"
-
-  - name: Change permissions to project's root/space
-    shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}
 
   - name: Uninstall web server packages
     apt: pkg=nginx state=removed update-cache=yes
     when: (mode == "lite") or (mode == "half")
 
   # Postgres database
-  - include: 'tasks/postgres.yml'
+  - include: 'tasks/postgres.yaml'
     when: (mode == "production") or (mode == "half")
 
   # nginx webserwer
-  - include: 'tasks/nginx.yml'
+  - include: 'tasks/nginx.yaml'
     when: mode == "production"
 
   handlers:

@@ -1,0 +1,25 @@
+---
+  - name: Create user
+    user: home={{ project_home_dir }} name={{ project_user }} state=present shell=/bin/bash
+
+  - name: SSH key deployment for galaxy user.
+    authorized_key: user={{ project_user }} key="{{ item }}"
+    with_file:
+      - ~/.ssh/id_rsa.pub
+
+  - name: Create the project directory
+    file: state=directory path={{ project_dir }}
+
+  - name: Update mode to the project directory
+    file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}
+
+  - name: Install required system packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    with_items: "{{ system_packages }}"
+
+  - name: Install required python packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    with_items: "{{ python_packages_system }}"
+
+  - name: Change permissions to project's root/space
+    shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}

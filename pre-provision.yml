@@ -3,7 +3,7 @@
   gather_facts: false
 
   # nginx python requirements
-  - include: 'tasks/python_base.yml'
+  - include: 'tasks/python_base.yaml'
 
   tasks:
     - ping:
