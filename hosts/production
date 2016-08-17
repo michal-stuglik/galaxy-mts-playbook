@@ -1,0 +1,16 @@
+[galaxy-servers:children]
+# leskowiec
+# gitlab
+ubuntu-galaxy
+
+[leskowiec]
+149.156.165.80
+
+[gitlab]
+143.234.212.108
+
+[ubuntu-galaxy]
+143.234.212.115
+
+
+[pulsarservers]

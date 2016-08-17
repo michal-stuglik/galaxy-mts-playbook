@@ -1,0 +1,21 @@
+[galaxy-servers:children]
+docker
+gitlab
+# fsm
+# obi
+
+
+[fsm]
+149.156.165.82
+
+[obi]
+149.156.165.103:4464
+
+[local]
+localhost       ansible_connection=ssh    ansible_ssh_user=galaxy
+
+[docker]
+#galaxy_1604 ansible_connection=docker
+galaxy_1604_head ansible_connection=docker
+
+
