@@ -4,7 +4,7 @@
   remote_user: galaxy
 #  connection:
   vars_files:
-    - vars.yml
+    - vars/vars.yml
 
   roles:
       - ansible-galaxy-tools

@@ -5,7 +5,7 @@
   become_method: sudo
 
   vars_files:
-    - vars.yml
+    - vars/vars.yml
 
 #  pre_tasks:
 #    - name: 'install python2'

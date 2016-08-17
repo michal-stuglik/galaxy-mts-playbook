@@ -2,7 +2,7 @@
 - hosts: galaxy-servers
   remote_user: galaxy
   vars_files:
-    - vars.yml
+    - vars/vars.yml
 
   tasks:
 
