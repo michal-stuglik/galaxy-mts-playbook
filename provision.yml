@@ -16,11 +16,11 @@
     when: (mode == "lite") or (mode == "half")
 
   # Postgres database
-  - include: 'tasks/postgres.yaml'
+  - include: 'tasks/postgres.yml'
     when: (mode == "production") or (mode == "half")
 
   # nginx webserwer
-  - include: 'tasks/nginx.yaml'
+  - include: 'tasks/nginx.yml'
     when: mode == "production"
 
   handlers:

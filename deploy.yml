@@ -49,6 +49,6 @@
 #
 
   handlers:
-    - include: handlers/nginx.yaml
-    - include: handlers/postgres.yaml
+    - include: handlers/nginx.yml
+    - include: handlers/postgres.yml
 
