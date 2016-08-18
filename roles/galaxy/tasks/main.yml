@@ -1,0 +1,28 @@
+---
+  - name: Create the code directory
+    file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}/{{ project_dir }}/
+
+  - name: Pull release_16.01 branch from the repository
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.01
+    when: repo == "release_16.01"
+
+  - name: Pull release_16.04 branch from the repository
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.04
+    when: repo == "release_16.04"
+
+  - name: Pull GalaxyProject dev branch from the repository
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=dev
+    when: repo == "gp-dev"
+
+  - name: Pull default IAS sources from the repository
+    git: repo={{ project_repo_mts }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True
+    when: repo == "mts-dev"
+
+  - name: Upload configuration files
+    copy: src=configs/{{ repo }}/{{ mode }}/galaxy/ dest={{ project_home_dir }}/{{ project_dir }}/config/
+
+  - name: Create data folder
+    file: path={{ project_home_dir }}/{{ project_data_dir }} state=directory
+
+  - name: Create tools dir
+    file: path={{ project_home_dir }}/{{ project_tools_dir }}/{{ project_tools_dep_dir }} state=directory
