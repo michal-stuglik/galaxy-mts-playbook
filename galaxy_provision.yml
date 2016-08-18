@@ -1,6 +1,8 @@
 ---
 - hosts: galaxy-servers
   gather_facts: true
+  vars_files:
+    - group_vars/vars
 
   roles:
     - python

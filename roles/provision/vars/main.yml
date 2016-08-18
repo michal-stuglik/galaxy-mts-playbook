@@ -1,0 +1,27 @@
+---
+# mandatory, system (debian-familiy) programs
+system_packages:
+  - build-essential
+  - git
+  - libevent-dev
+  - fort77
+  - gfortran
+  - libc6-dev
+  - lib32z1
+  - lib32ncurses5
+  - g++-multilib
+  - libc6-dev-i386
+  - libffi-dev
+  - software-properties-common
+  - libblas-dev
+  - libblas3
+  - libatlas-base-dev
+  - libatlas-dev
+  - libatlas3-base
+  - subversion
+  - pkg-config
+  - cmake
+  - automake
+  - cython
+  - zlib1g-dev
+  - pandoc
