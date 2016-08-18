@@ -1,0 +1,11 @@
+---
+- hosts: galaxy-servers
+  gather_facts: true
+
+  roles:
+    - python
+    - provision
+    - galaxy_user
+
+#  tasks:
+#    - ping:
