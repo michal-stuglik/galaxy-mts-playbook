@@ -2,6 +2,7 @@
 
   - name: Install web server packages.
     apt: pkg=nginx state=installed update-cache=yes
+    become: true
 
 #  - name: Open firewall ports for app
 
@@ -18,3 +19,4 @@
   - name: Install nginx configuration file.
     copy: src=configs/{{ repo }}/{{ mode }}/nginx/nginx.conf dest=/etc/nginx/
     notify: restart nginx
+    become: true

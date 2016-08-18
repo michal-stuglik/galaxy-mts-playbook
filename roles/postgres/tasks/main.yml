@@ -1,19 +1,21 @@
 ---
+
   - name: Install Postgres database packages.
     apt: pkg={{ item }} state=installed update-cache=yes
     with_items:
     - postgresql
     - postgresql-server-dev-all
+    become: true
 
   - name: Setup Postgres database
     postgresql_db: name={{ project_user }}
-    sudo: yes
-    sudo_user: postgres
+    become: true
+    become_user: postgres
 
   - name: Postgres user access to database
     postgresql_user: db={{ project_user }} name={{ project_user }} priv=ALL
-    sudo: yes
-    sudo_user: postgres
+    become: true
+    become_user: postgres
     notify: restart postgres
 
 #  # Postgres database
