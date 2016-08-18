@@ -1,10 +1,11 @@
 ---
 - hosts: galaxy-servers
   vars_files:
-    - vars/vars.yml
+    - group_vars/vars
+
   gather_facts: true
   become: yes
-  become_method: sudo
+
 
   tasks:
   - name: Add x2go Repository

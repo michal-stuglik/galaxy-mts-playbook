@@ -58,11 +58,11 @@ webserver_type: "paster" #"nginx"
 #  - pandoc
 
 
-system_web_and_db_packages:
-  - nginx
-  - postgresql
-  - postgresql-server-dev-all
-  - sqlite3
+#system_web_and_db_packages:
+#  - nginx
+#  - postgresql
+#  - postgresql-server-dev-all
+#  - sqlite3
 
 #python_packages_system:
 #  - python-dev
