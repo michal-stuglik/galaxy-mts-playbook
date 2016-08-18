@@ -5,4 +5,6 @@
     - group_vars/vars
 
   roles:
-    - galaxy
+     - { role: postgres, when: database_type == 'postgres' }
+     - { role: nginx, when: webserver_type == 'nginx' }
+     - galaxy

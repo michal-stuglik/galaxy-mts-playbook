@@ -26,6 +26,10 @@ repo: "release_16.04"
 mode: "lite"
 #mode: "production"
 
+# mode
+database_type: "sqlite" # "postgres"
+webserver_type: "paster" #"nginx"
+
 ## mandatory, system (debian-familiy) programs
 #system_packages:
 #  - build-essential
