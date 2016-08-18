@@ -2,6 +2,7 @@
 
   - name: Install web server packages.
     apt: pkg=nginx state=installed update-cache=yes
+#    when: install == "true"
     become: true
 
 #  - name: Open firewall ports for app
@@ -18,5 +19,16 @@
 
   - name: Install nginx configuration file.
     copy: src=configs/{{ repo }}/{{ mode }}/nginx/nginx.conf dest=/etc/nginx/
+    when: install == "true"
     notify: restart nginx
     become: true
+
+#  - name: Stop web server
+#    notify: stop nginx
+#    when: remove == "true"
+#    become: true
+
+#  - name: Uninstall web server packages
+#    apt: pkg=nginx state=removed update-cache=yes
+#    when: remove == "true"
+#    become: true

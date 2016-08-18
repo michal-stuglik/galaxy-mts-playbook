@@ -1,0 +1,15 @@
+---
+
+- hosts: galaxy-servers
+  vars_files:
+    - group_vars/vars
+  remote_user: galaxy
+
+  tasks:
+  - name: Start galaxy daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run.sh --daemon
+    when: state == "start"
+
+  - name: Stop galaxy daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run.sh --stop-daemon
+    when: state == "stop"
