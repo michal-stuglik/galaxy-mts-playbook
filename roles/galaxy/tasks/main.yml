@@ -1,6 +1,9 @@
 ---
   - name: Create the code directory
-    file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}/{{ project_dir }}/
+    file: mode=755 state=directory path={{ project_home_dir }}/{{ project_dir }}/
+
+#  - name: Create the code directory
+#    file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}/{{ project_dir }}/
 
   - name: Pull release_16.01 branch from the repository
     git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.01

@@ -3,7 +3,9 @@
 - hosts: galaxy-servers
   vars_files:
     - group_vars/vars
-  remote_user: galaxy
+#  become: true
+#  become_user: "{{ project_user }}"
+  remote_user: "{{ project_user }}"
 
   tasks:
   - name: Start galaxy daemon
