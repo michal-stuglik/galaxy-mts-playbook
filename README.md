@@ -13,3 +13,7 @@ modes:
 ```
 ./galaxy_manage.sh --stop/stop/restart
 ```
+
+
+- firewall, ports, host ip
+-- TODO

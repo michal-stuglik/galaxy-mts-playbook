@@ -8,10 +8,10 @@
   roles:
     - python
     - provision
-    - { role: postgres, when: database_type == 'postgres' }
-    - { role: nginx, when: webserver_type == 'nginx' }
-#    - galaxy_user
-
+    - { role: postgres, when: mode == 'production' }
+    - { role: nginx, when: mode == 'production' }
+#    - { role: postgres, when: database_type == 'postgres' }
+#    - { role: nginx, when: webserver_type == 'nginx' }
 
 #  tasks:
 #    - ping:
