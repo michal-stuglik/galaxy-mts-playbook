@@ -1,10 +1,18 @@
 ---
+
 - hosts: galaxy-servers
-  gather_facts: True
-  remote_user: galaxy
-#  connection:
   vars_files:
-    - vars/vars.yml
+    - group_vars/vars
+#  become: true
+#  become_user: "{{ project_user }}"
+  vars:
+    remote_user: "{{ project_user }}"
+#    galaxy_tools_tool_list_files: [ "files/sample_tool_list.yaml" ]
+    galaxy_tools_tool_list_files: [ "tools/tool_list_mini.yaml" ]
+    galaxy_tools_admin_user_password: "{{ galaxy_tools_admin_user_password }}"
+    galaxy_tools_create_bootstrap_user: yes
+#  galaxy_tools_api_key: "{{ galaxy_tools_api_key }}"
+#  galaxy_install_bootstrap_user: "{{ galaxy_install_bootstrap_user }}"
 
   roles:
       - ansible-galaxy-tools
