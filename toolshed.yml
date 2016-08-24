@@ -2,3 +2,62 @@
 # set configs & bootstrap database
 # http://gregvonkuster.org/galaxy-tool-shed-introduction/
 
+---
+- hosts: galaxy-servers
+  gather_facts: true
+#  become: true
+  become_user: "{{ project_user }}"
+#  remote_user: "{{ project_user }}"
+
+  vars_files:
+    - group_vars/vars
+
+#  vars:
+#    galaxy_toolshed_server_dir: ""
+#    galaxy_toolshed_manage_database: yes
+
+#    galaxy_toolshed_server_dir: "{{ project_home_dir }}/{{ project_toolshed_dir }}"
+#    galaxy_toolshed_venv_dir: "/srv/toolshed/venv"
+#    galaxy_toolshed_config_dir: "/srv/toolshed/config"
+#    galaxy_toolshed_config_file: "{{ galaxy_toolshed_config_dir }}/tool_shed.ini"
+#    galaxy_toolshed_mutable_config_dir: "/srv/toolshed/var/config"
+#    galaxy_toolshed_mutable_data_dir: "/srv/toolshed/var/data"
+#    galaxy_server_dir: "{{ galaxy_toolshed_server_dir }}"
+#    galaxy_venv_dir: "{{ galaxy_toolshed_venv_dir }}"
+#    galaxy_config_file: "{{ galaxy_toolshed_config_file }}"
+
+#  roles:
+#    - role: galaxyprojectdotorg.galaxy
+#      galaxy_manage_clone: yes
+#      galaxy_manage_static_setup: no
+#      galaxy_manage_mutable_setup: no
+#      galaxy_manage_database: no
+#      galaxy_fetch_eggs: no
+#    - role: galaxyprojectdotorg.galaxy_toolshed
+#      galaxy_toolshed_manage_static_setup: yes
+#      galaxy_toolshed_manage_database: no
+#    - role: galaxyprojectdotorg.galaxy
+#      galaxy_manage_clone: no
+#      galaxy_manage_static_setup: no
+#      galaxy_manage_mutable_setup: no
+#      galaxy_manage_database: no
+#      galaxy_fetch_eggs: yes
+
+#  roles:
+#    - ansible-galaxy-toolshed
+
+#- name: Tool Shed database
+#  hosts: toolshedservers
+#  remote_user: shed
+#  vars:
+#    galaxy_toolshed_server_dir: "/srv/toolshed/server"
+#    galaxy_toolshed_venv_dir: "/srv/toolshed/venv"
+#    galaxy_toolshed_config_dir: "/srv/toolshed/config"
+#    galaxy_toolshed_config_file: "{{ galaxy_toolshed_config_dir }}/tool_shed.ini"
+#  roles:
+#    - role: galaxyprojectdotorg.galaxy_toolshed
+#      galaxy_toolshed_manage_static_setup: no
+#      galaxy_toolshed_manage_database: yes
+
+#galaxy_toolshed_config_files: List of hashes (with src and dest keys) of files to copy from the control machine.
+#galaxy_toolshed_config_templates: List of hashes (with src and dest keys) of templates to fill from the control machine.

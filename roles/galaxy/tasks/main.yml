@@ -37,3 +37,6 @@
   - name: Configure production configs from templates
     template: src=galaxy.ini.prod.j2 dest={{ project_home_dir }}/{{ project_dir }}/config/galaxy.ini
     when: mode == "production"
+
+  - name: Configure toolshed configs from templates
+    template: src=tool_sheds_conf.xml.j2 dest={{ project_home_dir }}/{{ project_dir }}/config/tool_sheds_conf.xml
