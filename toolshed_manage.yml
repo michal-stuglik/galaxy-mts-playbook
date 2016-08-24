@@ -1,0 +1,15 @@
+---
+
+- hosts: galaxy-servers
+  vars_files:
+    - group_vars/vars
+  remote_user: "{{ project_user }}"
+
+  tasks:
+  - name: Start galaxy toolshed daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run_tool_shed.sh --daemon
+    when: state == "start"
+
+  - name: Stop galaxy toolshed daemon
+    shell: /bin/bash {{ project_home_dir }}/{{ project_dir }}/run_tool_shed.sh --stop-daemon
+    when: state == "stop"

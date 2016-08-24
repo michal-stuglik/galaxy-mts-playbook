@@ -3,8 +3,6 @@
 - hosts: galaxy-servers
   vars_files:
     - group_vars/vars
-#  become: true
-#  become_user: "{{ project_user }}"
   remote_user: "{{ project_user }}"
 
   tasks:

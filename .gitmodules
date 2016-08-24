@@ -1,3 +1,7 @@
 [submodule "roles/ansible-galaxy-tools"]
 	path = roles/ansible-galaxy-tools
 	url = git://github.com/galaxyproject/ansible-galaxy-tools.git
+
+[submodule "roles/ansible-galaxy-toolshed"]
+	path = roles/ansible-galaxy-toolshed
+	url = git://github.com/galaxyproject/ansible-galaxy-toolshed.git
