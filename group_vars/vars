@@ -17,9 +17,7 @@ galaxy_tools_tool_list: tools/tool_list.yaml
 # vault_galaxy_tools_api_key: <API key for Galaxy admin user>
 # vault_admin_users: XXX
 
-galaxy_install_bootstrap_user: abc@gmail.com
-galaxy_tools_admin_user_password: xxx
-galaxy_tools_api_key: xxx
+galaxy_tools_api_key: ""
 galaxy_admin_users: abc@gmail.com
 
 galaxy_host_ip: 0.0.0.0
