@@ -1,26 +1,40 @@
 ---
-
 - hosts: pulsar
   gather_facts: true
   vars_files:
     - group_vars/vars
-    pre_tasks:
-      - name: Install Mercurial
-        apt: pkg={{ item }} state=installed
-        sudo: yes
-        when: ansible_os_family = 'Debian'
-        with_items:
-          - git
-          - python-virtualenv
-      - name: Install Mercurial
-        yum: pkg={{ item }} state=installed
-        sudo: yes
-        when: ansible_os_family = 'RedHat'
-        with_items:
-          - git
-          - python-virtualenv
-    roles:
-      - role: ansible-pulsar
+
+
+  pre_tasks:
+   - name: Inastall Mercurial
+     apt: pkg={{ item }} state=installed
+     become: true
+     when: ansible_distribution == 'Ubuntu'
+     with_items:
+      - git
+      - python-virtualenv
+
+   - name: Install VSC
+     yum: pkg={{ item }} state=installed
+     become: true
+     when: ansible_distribution == 'CentOS'
+     with_items:
+      - git
+#      - python-virtualenv
+
+   - name: enable python2.7 on CentOS
+     shell: source /opt/rh/python27/enable
+     #  shell: source /home/username/.bashrc && [the actual command you want run]
+     args:
+      executable: /bin/bash
+     when: ansible_distribution == 'CentOS'
+
+  roles:
+    - role: ansible-pulsar
+
+
+# https://github.com/galaxyproject/ansible-pulsar
+# http://stackoverflow.com/questions/22256884/not-possible-to-source-bashrc-with-ansible
 
 #- hosts: localhost
 #  gather_facts: true

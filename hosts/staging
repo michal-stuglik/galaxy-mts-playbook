@@ -1,10 +1,10 @@
 [galaxy-servers:children]
 # gitlab
 # leskowiec
-ubuntu-galaxy
+# ubuntu-galaxy
 # docker
 # vb
-# pulsar
+pulsar
 
 [gitlab]
 143.234.212.108
@@ -23,6 +23,9 @@ localhost       ansible_connection=ssh    ansible_ssh_user=galaxy
 galaxy_1604_head ansible_connection=docker
 
 [vb]
+ub14vb ansible_port=2222 ansible_host=127.0.0.1
+cent68vb ansible_port=3322 ansible_host=127.0.0.1
 
 [pulsar]
-localhost       ansible_connection=ssh    ansible_ssh_user=galaxy
+#ub14vb ansible_port=2222 ansible_host=127.0.0.1
+cent68vb ansible_port=3322 ansible_host=127.0.0.1

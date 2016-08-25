@@ -25,3 +25,28 @@ system_packages:
   - cython
   - zlib1g-dev
   - pandoc
+
+python_packages_system:
+  - python-dev
+  - python-setuptools
+  - python-pip
+  - python-virtualenv
+  - python-psycopg2
+
+system_packages_centos:
+  - epel-release
+  - centos-release-scl
+
+  # --enablerepo=ius
+
+python_packages_system_centos6:
+  - python27
+#  - python27-dev
+#  - python27-pip
+#  - python27-setuptools
+#  - python27-virtualenv
+#  - python27-simplejson
+
+# libffi-dev python-dev libssl-dev
+
+
