@@ -1,23 +1,16 @@
 [galaxy-servers:children]
 # gitlab
 # leskowiec
-# fsm
-# obi
 ubuntu-galaxy
 # docker
 # vb
+# pulsar
 
 [gitlab]
 143.234.212.108
 
 [ubuntu-galaxy]
 143.234.212.115
-
-[fsm]
-149.156.165.82
-
-[obi]
-149.156.165.103:4464
 
 [leskowiec]
 149.156.165.80
@@ -31,4 +24,5 @@ galaxy_1604_head ansible_connection=docker
 
 [vb]
 
-
+[pulsar]
+localhost       ansible_connection=ssh    ansible_ssh_user=galaxy

@@ -5,3 +5,7 @@
 [submodule "roles/ansible-galaxy-toolshed"]
 	path = roles/ansible-galaxy-toolshed
 	url = git://github.com/galaxyproject/ansible-galaxy-toolshed.git
+
+[submodule "roles/ansible-pulsar"]
+	path = roles/ansible-pulsar
+	url = git://github.com/galaxyproject/ansible-pulsar.git

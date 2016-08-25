@@ -1,0 +1,42 @@
+---
+
+- hosts: pulsar
+  gather_facts: true
+  vars_files:
+    - group_vars/vars
+    pre_tasks:
+      - name: Install Mercurial
+        apt: pkg={{ item }} state=installed
+        sudo: yes
+        when: ansible_os_family = 'Debian'
+        with_items:
+          - git
+          - python-virtualenv
+      - name: Install Mercurial
+        yum: pkg={{ item }} state=installed
+        sudo: yes
+        when: ansible_os_family = 'RedHat'
+        with_items:
+          - git
+          - python-virtualenv
+    roles:
+      - role: ansible-pulsar
+
+#- hosts: localhost
+#  gather_facts: true
+#  connection: local
+#  vars_files:
+#    - group_vars/vars
+#  vars:
+#    pulsar_server_dir: "{{ pulsar_server_dir }}"
+
+#
+#  roles:
+#    - role: ansible-pulsar
+
+#- hosts: galaxy-servers
+#  gather_facts: true
+#  become_user: "{{ project_user }}"
+#
+#  vars_files:
+#    - group_vars/vars
