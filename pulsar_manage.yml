@@ -1,0 +1,20 @@
+---
+
+- hosts: pulsar-servers
+  gather_facts: true
+  vars_files:
+    - group_vars/vars
+  vars:
+
+  tasks:
+  - name: Start pulsar daemon
+    shell: cd "{{ pulsar_server_dir }}" && source /opt/rh/python27/enable && source venv/bin/activate && pulsar --daemon
+    args:
+      executable: /bin/bash
+    when: state == "start" and ansible_distribution == 'CentOS'
+
+  - name: Stop pulsar daemon
+    shell: cd "{{ pulsar_server_dir }}" && source /opt/rh/python27/enable && source venv/bin/activate && pulsar --stop-daemon
+    args:
+      executable: /bin/bash
+    when: state == "stop" and ansible_distribution == 'CentOS'

@@ -25,6 +25,7 @@ galaxy_host_port: 8181
 
 # PULSAR
 pulsar_server_dir: /home/michal/pulsar
+pulsar_venv_dir: /home/michal/pulsar/venv
 
 # default repository name
 # repo: "mts-dev"
