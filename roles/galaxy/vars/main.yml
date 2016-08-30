@@ -1,0 +1,6 @@
+---
+
+python_pip_packages_user:
+  - setuptools
+#  - python-pip
+#  - python-virtualenv

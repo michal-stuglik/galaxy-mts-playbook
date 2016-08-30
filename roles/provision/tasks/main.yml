@@ -27,5 +27,3 @@
     apt: pkg={{ item }} state=installed update-cache=yes
     when: ansible_distribution == 'Ubuntu'
     with_items: "{{ python_packages_system }}"
-
-
