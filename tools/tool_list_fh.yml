@@ -1,0 +1,9 @@
+---
+tools:
+- name: 'column_maker'
+  owner: 'devteam'
+  tool_panel_section_id: 'textutil'
+
+- name: 'findhap4'
+  owner: 'michal-stuglik'
+  tool_shed_url: http://ubuntu04:9009/

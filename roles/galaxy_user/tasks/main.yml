@@ -13,5 +13,5 @@
   - name: Update mode to the project directory
     file: group={{ project_user }} owner={{ project_user }} mode=755 state=directory path={{ project_home_dir }}
 
-  - name: Change permissions to project's root/space
-    shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}
+#  - name: Change permissions to project's root/space
+#    shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}

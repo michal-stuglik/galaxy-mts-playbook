@@ -3,11 +3,13 @@
 - hosts: galaxy-servers
   vars_files:
     - group_vars/vars
+
   become_user: "{{ project_user }}"
   vars:
-    galaxy_tools_tool_list_files: [ "tools/tool_list_mini.yaml" ]
-    galaxy_tools_galaxy_instance_url: <>
-    galaxy_tools_api_key: <>
+#    galaxy_tools_tool_list_files: [ "tools/tool_list_mini.yaml" ]
+    galaxy_tools_tool_list_files: [ "tools/tool_list_fh.yml" ]
+#    galaxy_tools_galaxy_instance_url: <>
+#    galaxy_tools_api_key: <>
 
   roles:
       - ansible-galaxy-tools

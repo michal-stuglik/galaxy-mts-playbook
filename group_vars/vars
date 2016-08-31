@@ -23,6 +23,12 @@ galaxy_admin_users: abc@gmail.com
 galaxy_host_ip: 0.0.0.0
 galaxy_host_port: 8181
 
+# TOOLSHED (temp)
+# toolshed_repo_gitlab: "http://143.234.212.108:9009/"
+toolshed_repo_gitlab: "http://ubuntu04:9009/"
+
+
+
 # PULSAR
 pulsar_server_dir: /home/michal/pulsar
 pulsar_venv_dir: /home/michal/pulsar/venv

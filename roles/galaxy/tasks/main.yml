@@ -1,4 +1,5 @@
 ---
+
   - name: Create the code directory
     file: mode=755 state=directory path={{ project_home_dir }}/{{ project_dir }}/
 
@@ -45,6 +46,12 @@
   - name: Configure toolshed configs from templates
     template: src=tool_sheds_conf.xml.j2 dest={{ project_home_dir }}/{{ project_dir }}/config/tool_sheds_conf.xml
 
+  - name: Configure toolshed configs (2) from templates
+    template: src=shed_tool_conf.xml.j2 dest={{ project_home_dir }}/{{ project_dir }}/config/shed_tool_conf.xml
+
 #  - name: Install/update python packages in user space
 #    pip: name={{ item }} #virtualenv={{ galaxy_tools_base_dir }}/venv virtualenv_command="{{ pip_virtualenv_command | default( 'virtualenv' ) }}"
 #    with_items: "{{ python_pip_packages_user }}"
+
+  - name: Change permissions to project's root/space
+    shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}

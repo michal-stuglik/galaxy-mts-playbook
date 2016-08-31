@@ -1,6 +1,6 @@
 ---
 
-- hosts: galaxy-servers
+- hosts: toolshed-servers
   vars_files:
     - group_vars/vars
   remote_user: "{{ project_user }}"
