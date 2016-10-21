@@ -11,15 +11,15 @@
 #    when: repo == "release_16.01"
 
   - name: Pull release_16.07 branch from the repository
-    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.07
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.07 force=yes
     when: repo == "release_16.07"
 
   - name: Pull release_16.04 branch from the repository
-    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.04
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=release_16.04 force=yes
     when: repo == "release_16.04"
 
   - name: Pull GalaxyProject dev branch from the repository
-    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=dev
+    git: repo={{ project_repo_galaxyproject }} dest={{ project_home_dir }}/{{ project_dir }}/ accept_hostkey=True version=dev force=yes
     when: repo == "gp-dev"
 
 #  - name: Pull default IAS sources from the repository
@@ -49,9 +49,9 @@
   - name: Configure toolshed configs (2) from templates
     template: src=shed_tool_conf.xml.j2 dest={{ project_home_dir }}/{{ project_dir }}/config/shed_tool_conf.xml
 
-#  - name: Install/update python packages in user space
-#    pip: name={{ item }} #virtualenv={{ galaxy_tools_base_dir }}/venv virtualenv_command="{{ pip_virtualenv_command | default( 'virtualenv' ) }}"
-#    with_items: "{{ python_pip_packages_user }}"
+  - name: Install/update python packages in user space
+    pip: name={{ item }} virtualenv={{ project_home_dir }}/{{ project_dir }}/.venv virtualenv_command="{{ pip_virtualenv_command | default( 'virtualenv' ) }}"
+    with_items: "{{ python_pip_packages_user }}"
 
   - name: Change permissions to project's root/space
     shell: chown -R {{ project_user }}:{{ project_user }} {{ project_home_dir }}

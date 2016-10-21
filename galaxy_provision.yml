@@ -8,5 +8,5 @@
   roles:
 #    - python
     - provision
-#    - { role: postgres, when: mode == 'production' }
+    - { role: postgres, when: mode == 'production' }
 #    - { role: nginx, when: mode == 'production' }

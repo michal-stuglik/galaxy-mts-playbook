@@ -2,5 +2,6 @@
 
 python_pip_packages_user:
   - setuptools
+  - watchdog
 #  - python-pip
 #  - python-virtualenv
