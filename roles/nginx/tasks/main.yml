@@ -1,15 +1,6 @@
 ---
 
-  - name: Install web server packages.
-    apt: pkg=nginx state=installed update-cache=yes
-#    when: install == "true"
-    become: true
-
 #  - name: Open firewall ports for app
-
-
-#  - name: Install web server packages.
-#    apt: pkg=nginx state=installed update-cache=yes
 
     # nginx must be build from scratch, with upload module
     #sudo mkdir /opt/httpupload
@@ -17,16 +8,15 @@
     #sudo wget https://github.com/vkholodkov/nginx-upload-module/archive/2.2.zip
     #sudo unzip 2.2.zip
 
-  - name: Install nginx configuration file.
-    copy: src=configs/{{ repo }}/{{ mode }}/nginx/nginx.conf dest=/etc/nginx/
-    when: install == "true"
-    notify: restart nginx
+  - name: Install NGINX required system packages
+    apt: pkg={{ item }} state=installed update-cache=yes
+    with_items: "{{ nginx_packages }}"
     become: true
 
-#  - name: Stop web server
-#    notify: stop nginx
-#    when: remove == "true"
-#    become: true
+  - name: Install nginx configuration file.
+    template: src=nginx.conf.j2 dest=/etc/nginx/nginx.conf
+    notify: restart nginx
+    become: true
 
 #  - name: Uninstall web server packages
 #    apt: pkg=nginx state=removed update-cache=yes

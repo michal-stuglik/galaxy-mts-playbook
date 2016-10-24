@@ -6,7 +6,7 @@
     - group_vars/vars
 
   roles:
-#    - python
+    - python
     - provision
     - { role: postgres, when: mode == 'production' }
-#    - { role: nginx, when: mode == 'production' }
+    - { role: nginx, when: mode == 'production' }
