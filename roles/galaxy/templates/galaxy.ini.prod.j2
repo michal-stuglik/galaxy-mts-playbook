@@ -166,7 +166,7 @@ file_path = ../galaxy-database/database/files
 # files integrated into a single file that defines the tool panel layout.  This
 # file can be changed by the Galaxy administrator to alter the layout of the
 # tool panel.  If not present, Galaxy will create it.
-#integrated_tool_panel_config = integrated_tool_panel.xml
+integrated_tool_panel_config = integrated_tool_panel.xml
 
 # Default path to the directory containing the tools defined in tool_conf.xml.
 # Other tool config files must include the tool_path as an attribute in the
@@ -179,7 +179,7 @@ tool_path = tools
 #   https://wiki.galaxyproject.org/Admin/Config/ToolDependencies
 # If this option is not set to a valid path, installing tools with dependencies
 # from the Tool Shed will fail.
-tool_dependency_dir = ../galaxy-tools/tools_dependancy
+tool_dependency_dir = ../galaxy-tools/tools_dependency
 
 
 # The dependency resolves config file specifies an ordering and options for how
@@ -188,7 +188,7 @@ tool_dependency_dir = ../galaxy-tools/tools_dependancy
 # Galaxy packages, and then use conda if available.
 # See https://github.com/galaxyproject/galaxy/blob/dev/doc/source/admin/dependency_resolvers.rst
 # for more information on these options.
-dependency_resolvers_config_file = config/dependency_resolvers_conf.xml
+#dependency_resolvers_config_file = config/dependency_resolvers_conf.xml
 
 # Following conda dependeny resolution options are experimental as of early
 # 2016. These will change the defaults for each conda resolver, but multiple
@@ -211,7 +211,7 @@ conda_ensure_channels = r,bioconda,iuc
 
 # File containing the Galaxy Tool Sheds that should be made available to
 # install from in the admin interface (.sample used if default does not exist).
-#tool_sheds_config_file = config/tool_sheds_conf.xml
+tool_sheds_config_file = config/tool_sheds_conf.xml
 
 # Set to True to enable monitoring of tools and tool directories
 # listed in any tool config file specified in tool_config_file option.
