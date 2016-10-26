@@ -1,5 +1,4 @@
 ---
-
 - hosts: galaxy-servers
   vars_files:
     - group_vars/vars
@@ -7,11 +6,12 @@
   become_user: "{{ project_user }}"
   vars:
 #    galaxy_tools_tool_list_files: [ "tools/tool_list_mini.yaml" ]
-    galaxy_tools_tool_list_files: [ "tools/tool_list_fh.yml" ]
-#    galaxy_tools_galaxy_instance_url: <>
+#    galaxy_tools_tool_list_files: [ "tools/tool_list_fh.yml" ]
+    galaxy_tools_galaxy_instance_url: "{{ galaxy_host_ip }}:{{ galaxy_host_port }}"
+    galaxy_server_dir: "{{ project_home_dir }}/{{ project_dir }}"
+    galaxy_tools_pid_file_name: paster.pid
+    galaxy_tools_log_file_name: paster.log
 #    galaxy_tools_api_key: <>
 
   roles:
       - ansible-galaxy-tools
-
-# NOTE: vars in this playbook should be set before run
