@@ -1,11 +1,9 @@
 [galaxy-servers:children]
-# gitlab
-ubuntu-galaxy
+server1
+server2
 
-[gitlab]
-143.234.212.108
+[server1]
+000.000.000.000
 
-[ubuntu-galaxy]
-143.234.212.115
-
-[pulsar-servers]
+[server2]
+000.000.000.000

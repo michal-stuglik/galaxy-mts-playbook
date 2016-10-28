@@ -5,8 +5,7 @@
 
   become_user: "{{ project_user }}"
   vars:
-#    galaxy_tools_tool_list_files: [ "tools/tool_list_mini.yaml" ]
-#    galaxy_tools_tool_list_files: [ "tools/tool_list_fh.yml" ]
+    galaxy_tools_tool_list_files: [ "tools/tool_list_sample.yaml" ]
     galaxy_tools_galaxy_instance_url: "{{ galaxy_host_ip }}:{{ galaxy_host_port }}"
     galaxy_server_dir: "{{ project_home_dir }}/{{ project_dir }}"
     galaxy_tools_pid_file_name: paster.pid

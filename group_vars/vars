@@ -25,7 +25,6 @@ galaxy_host_ip: 0.0.0.0
 galaxy_host_port: 8181
 
 # TOOLSHED (temp)
-# toolshed_repo_gitlab: "http://143.234.212.108:9009/"
 toolshed_repo_gitlab: "http://ubuntu04:9009/"
 
 # PULSAR
@@ -42,8 +41,6 @@ repo: "release_16.07"
 # mode: "lite"
 mode: "production"
 
-
-
 # mode
 # database_type: "sqlite" # "postgres"
 # webserver_type: "paster" #"nginx"
@@ -51,7 +48,3 @@ mode: "production"
 system_remote_packages:
   - x2goserver
   - x2goserver-xsession
-
-# Garbage
-# mode_database_connection: postgresql:///galaxy
-# mode_database_connection: sqlite:///./database/universe.sqlite?isolation_level=IMMEDIATE
