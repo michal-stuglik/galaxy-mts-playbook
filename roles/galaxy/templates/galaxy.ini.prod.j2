@@ -119,7 +119,7 @@ database_connection = postgresql:///galaxy
 # If large database query results are causing memory or response time issues in
 # the Galaxy process, leave the result on the server instead.  This option is
 # only available for PostgreSQL and is highly recommended.
-#database_engine_option_server_side_cursors = False
+database_engine_option_server_side_cursors = True
 
 # Log all database transactions, can be useful for debugging and performance
 # profiling.  Logging is done via Python's 'logging' module under the qualname
