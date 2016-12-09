@@ -1,9 +1,0 @@
-[galaxy-servers:children]
-server1
-server2
-
-[server1]
-000.000.000.000
-
-[server2]
-000.000.000.000
