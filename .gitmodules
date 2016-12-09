@@ -9,3 +9,7 @@
 [submodule "roles/ansible-pulsar"]
 	path = roles/ansible-pulsar
 	url = git://github.com/galaxyproject/ansible-pulsar.git
+
+[submodule "galaxy-hosts"]
+	path = galaxy-hosts
+	url = git://bitbucket.org/michal-stuglik/galaxy-hosts.git
